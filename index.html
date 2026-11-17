@@ -9013,7 +9013,7 @@ https://maps.app.goo.gl/6cLvxjsnC4fLQZL29
                 <div class="section-container full-height p-relative">
                     <div class="wedding-ceremony-section">
                         <h3 class="ceremony-title">LỄ VU QUY</h3>
-                        <p class="ceremony-time">ĐƯỢC TỔ CHỨC VÀO LÚC 11:00, THỨ SÁU</p>
+                        <p class="ceremony-time">ĐƯỢC TỔ CHỨC VÀO LÚC 10:00, THỨ SÁU</p>
                         <div class="ceremony-date-wrap">
                             <div class="ceremony-date-side">
                                 <div class="border-line"></div>
@@ -9029,7 +9029,7 @@ https://maps.app.goo.gl/6cLvxjsnC4fLQZL29
                         </div>
                         <p class="ceremony-lunar">(Tức ngày 10 tháng 11 năm Bính Ngọ)</p>
                         <p class="ceremony-venue">TẠI TƯ GIA NHÀ GÁI</p>
-                        <p class="ceremony-address">Thôn Lạc Thắng, Xã Giao Hoà, Tỉnh Ninh Bình</p>
+                        <p class="ceremony-address">Thôn Lạc Nam, Xã Giao Hoà, Tỉnh Ninh Bình</p>
                         <!-- <div class="ceremony-btn-wrap">
                             <a class="ceremony-btn" href="https://maps.app.goo.gl/tSm88DXaypkUAZ7A7" target="_blank"
                                 rel="noopener">XEM CHỈ ĐƯỜNG</a>
@@ -9066,7 +9066,7 @@ https://maps.app.goo.gl/6cLvxjsnC4fLQZL29
                             <div id="w-xo6pgmit" class="com-html-box p-absolute">
                                 <div class="frame-html-box full-width full-height"><!-- ⭐ CẤU HÌNH -->
                                     <script>
-                                        const DATE_INPUT = "17.12.2026";   // ngày bạn muốn đánh trái tim
+                                        const DATE_INPUT = "17, 18.12.2026";   // ngày bạn muốn đánh trái tim (hỗ trợ nhiều ngày: "17, 18.12.2026")
                                         const CAL_LANG = "vi";           // "vi" hoặc "en"
                                     </script>
 
@@ -9327,10 +9327,22 @@ https://maps.app.goo.gl/6cLvxjsnC4fLQZL29
                                             }
 
                                             function parseInput(str) {
-                                                const m = str.match(/^([\d,\s]+)[\/\.\-](\d{1,2})[\/\.\-](\d{4})$/);
+                                                const m = str.match(/^([\d,\s\-&]+)[\/\.\-](\d{1,2})[\/\.\-](\d{4})$/);
                                                 if (!m) return;
 
-                                                const days = m[1].split(",").map(x => parseInt(x.trim(), 10)).filter(x => !isNaN(x));
+                                                let days = [];
+                                                const parts = m[1].replace(/&/g, ",").split(",");
+                                                parts.forEach(p => {
+                                                    if (p.includes("-")) {
+                                                        const [start, end] = p.split("-").map(x => parseInt(x.trim(), 10));
+                                                        if (!isNaN(start) && !isNaN(end)) {
+                                                            for (let i = start; i <= end; i++) days.push(i);
+                                                        }
+                                                    } else {
+                                                        const num = parseInt(p.trim(), 10);
+                                                        if (!isNaN(num)) days.push(num);
+                                                    }
+                                                });
                                                 const month = parseInt(m[2], 10);
                                                 const year = parseInt(m[3], 10);
 
