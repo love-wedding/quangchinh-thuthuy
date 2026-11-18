@@ -9184,78 +9184,80 @@ https://maps.app.goo.gl/6cLvxjsnC4fLQZL29
 
             .countdown-title {
                 font-family: 'Playfair Display', Georgia, serif;
-                font-size: 18px;
+                font-size: 14px;
                 font-weight: 600;
                 text-transform: uppercase;
-                letter-spacing: 2.2px;
+                /* letter-spacing: 2.2px; */
                 line-height: 1.3;
                 margin: 0 0 18px 0;
                 color: #44403c;
             }
 
-            .countdown-boxes {
+            .countdown-wrap {
                 display: flex;
                 justify-content: center;
-                align-items: center;
-                gap: 10px;
+                align-items: flex-start;
+                gap: 14px;
                 margin: 0 auto;
                 max-width: 360px;
             }
 
-            .countdown-box {
-                flex: 1;
-                max-width: 76px;
-                min-width: 64px;
-                background: rgba(255, 255, 255, 0.88);
-                border: 1px solid rgba(70, 65, 60, 0.22);
-                border-radius: 12px;
-                padding: 12px 4px 10px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-                box-sizing: border-box;
+            .countdown-col {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: center;
-                transition: transform 0.2s ease;
-            }
-
-            .countdown-box:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+                min-width: 54px;
             }
 
             .countdown-num {
                 font-family: 'Playfair Display', Georgia, serif;
-                font-size: 32px;
-                font-weight: 600;
+                font-size: 38px;
+                font-weight: 500;
                 line-height: 1;
                 color: #363330;
                 display: block;
-                min-height: 32px;
+            }
+
+            .countdown-separator {
+                font-family: 'Playfair Display', Georgia, serif;
+                font-size: 30px;
+                font-weight: 400;
+                line-height: 1;
+                color: #7a726c;
+                padding-top: 3px;
+                user-select: none;
             }
 
             .countdown-label {
                 font-family: 'Playfair Display', Georgia, serif;
-                font-size: 11px;
+                font-size: 11.5px;
                 font-weight: 500;
-                letter-spacing: 1.2px;
+                letter-spacing: 1.5px;
                 text-transform: uppercase;
                 color: #6b645f;
-                margin-top: 6px;
+                margin-top: 8px;
                 display: block;
                 line-height: 1;
             }
 
             @media (max-width: 360px) {
-                .countdown-boxes {
-                    gap: 6px;
+                .countdown-wrap {
+                    gap: 8px;
                 }
-                .countdown-box {
-                    padding: 10px 2px 8px;
+
+                .countdown-col {
+                    min-width: 46px;
                 }
+
                 .countdown-num {
-                    font-size: 26px;
+                    font-size: 30px;
                 }
+
+                .countdown-separator {
+                    font-size: 24px;
+                    padding-top: 2px;
+                }
+
                 .countdown-label {
                     font-size: 10px;
                 }
@@ -9267,28 +9269,31 @@ https://maps.app.goo.gl/6cLvxjsnC4fLQZL29
                 <div class="section-background p-absolute full-width full-height lazy"></div>
                 <div class="section-container full-height p-relative">
                     <div class="wedding-countdown-section">
-                        <h3 class="countdown-title">CÙNG ĐẾM NGƯỢC THỜI GIAN</h3>
-                        <div class="countdown-boxes">
-                            <div class="countdown-box">
+                        <h3 class="countdown-title">Ngày đặc biệt ấy đang đến thật gần...</h3>
+                        <div class="countdown-wrap">
+                            <div class="countdown-col">
                                 <span class="countdown-num" id="cd-days">00</span>
                                 <span class="countdown-label">NGÀY</span>
                             </div>
-                            <div class="countdown-box">
+                            <span class="countdown-separator">:</span>
+                            <div class="countdown-col">
                                 <span class="countdown-num" id="cd-hours">00</span>
                                 <span class="countdown-label">GIỜ</span>
                             </div>
-                            <div class="countdown-box">
+                            <span class="countdown-separator">:</span>
+                            <div class="countdown-col">
                                 <span class="countdown-num" id="cd-minutes">00</span>
                                 <span class="countdown-label">PHÚT</span>
                             </div>
-                            <div class="countdown-box">
+                            <span class="countdown-separator">:</span>
+                            <div class="countdown-col">
                                 <span class="countdown-num" id="cd-seconds">00</span>
                                 <span class="countdown-label">GIÂY</span>
                             </div>
                         </div>
                     </div>
                     <script>
-                        (function() {
+                        (function () {
                             // Cấu hình ngày giờ đếm ngược (Mặc định: 10:00 ngày 18/12/2026)
                             const targetDate = new Date("2026-12-18T10:00:00+07:00").getTime();
 
