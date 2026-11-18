@@ -9074,7 +9074,7 @@ https://maps.app.goo.gl/6cLvxjsnC4fLQZL29
                 <div class="section-background p-absolute full-width full-height lazy"></div>
                 <div class="section-container full-height p-relative">
                     <div class="wedding-ceremony-section">
-                        <h3 class="ceremony-title">BỮA TIỆC CHUNG VUI</h3>
+                        <h3 class="ceremony-title">BỮA TIỆC THÂN MẬT</h3>
                         <p class="ceremony-time">ĐƯỢC TỔ CHỨC VÀO LÚC 17:30, THỨ NĂM</p>
                         <div class="ceremony-date-wrap">
                             <div class="ceremony-date-side">
@@ -9151,310 +9151,181 @@ https://maps.app.goo.gl/6cLvxjsnC4fLQZL29
                 </div>
             </div>
         </div>
+        <style>
+            /* ==========================================================================
+               COUNTDOWN SECTION (THAY CHO LỊCH TRÁI TIM)
+               ========================================================================== */
+            #w-ko126gho {
+                height: auto !important;
+                min-height: unset !important;
+                padding: 10px 0 16px;
+            }
+
+            #w-ko126gho .section-wrapper,
+            #w-ko126gho .section-container {
+                height: auto !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                box-sizing: border-box;
+            }
+
+            .wedding-countdown-section {
+                width: 100%;
+                max-width: 420px;
+                padding: 22px 16px 24px;
+                text-align: center;
+                box-sizing: border-box;
+                position: relative;
+                font-family: 'Playfair Display', Georgia, serif;
+                font-variant-numeric: lining-nums;
+                font-feature-settings: "lnum" 1;
+            }
+
+            .countdown-title {
+                font-family: 'Playfair Display', Georgia, serif;
+                font-size: 18px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 2.2px;
+                line-height: 1.3;
+                margin: 0 0 18px 0;
+                color: #44403c;
+            }
+
+            .countdown-boxes {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                margin: 0 auto;
+                max-width: 360px;
+            }
+
+            .countdown-box {
+                flex: 1;
+                max-width: 76px;
+                min-width: 64px;
+                background: rgba(255, 255, 255, 0.88);
+                border: 1px solid rgba(70, 65, 60, 0.22);
+                border-radius: 12px;
+                padding: 12px 4px 10px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: transform 0.2s ease;
+            }
+
+            .countdown-box:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+            }
+
+            .countdown-num {
+                font-family: 'Playfair Display', Georgia, serif;
+                font-size: 32px;
+                font-weight: 600;
+                line-height: 1;
+                color: #363330;
+                display: block;
+                min-height: 32px;
+            }
+
+            .countdown-label {
+                font-family: 'Playfair Display', Georgia, serif;
+                font-size: 11px;
+                font-weight: 500;
+                letter-spacing: 1.2px;
+                text-transform: uppercase;
+                color: #6b645f;
+                margin-top: 6px;
+                display: block;
+                line-height: 1;
+            }
+
+            @media (max-width: 360px) {
+                .countdown-boxes {
+                    gap: 6px;
+                }
+                .countdown-box {
+                    padding: 10px 2px 8px;
+                }
+                .countdown-num {
+                    font-size: 26px;
+                }
+                .countdown-label {
+                    font-size: 10px;
+                }
+            }
+        </style>
+
         <div id="w-ko126gho" class="com-section" data-section>
             <div class="section-wrapper full-width full-height p-relative">
                 <div class="section-background p-absolute full-width full-height lazy"></div>
                 <div class="section-container full-height p-relative">
-                    <div id="w-1gpjhoie" class="p-absolute is-animation group-auto-scroll sroll-size">
-                        <div class="group-container">
-                            <div id="w-xo6pgmit" class="com-html-box p-absolute">
-                                <div class="frame-html-box full-width full-height"><!-- ⭐ CẤU HÌNH -->
-                                    <script>
-                                        const DATE_INPUT = "18.12.2026";   // ngày bạn muốn đánh trái tim (hỗ trợ nhiều ngày: "17, 18.12.2026")
-                                        const CAL_LANG = "vi";           // "vi" hoặc "en"
-                                    </script>
-
-                                    <div class="wc-cal-outer">
-
-                                        <!-- TIÊU ĐỀ -->
-                                        <div id="wc-cal-title" class="wc-cal-title">Tháng …</div>
-
-                                        <!-- LỊCH -->
-                                        <div class="wc-cal" id="wc-cal-target">
-                                            <div class="wc-cal-frame">
-
-                                                <!-- HÀNG THỨ -->
-                                                <div class="wc-cal-dow-row" data-cal-dow></div>
-
-                                                <!-- LƯỚI NGÀY -->
-                                                <div class="wc-cal-grid" data-cal-grid></div>
-
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <style>
-                                        @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Open+Sans:wght@400;700&display=swap');
-
-                                        /* 🔲 KHUNG NGOÀI: rộng 305, nền mờ 50% */
-                                        .wc-cal-outer {
-                                            width: 305px;
-                                            box-sizing: border-box;
-                                            margin: 0 auto;
-                                            border: 1px solid #000;
-                                            border-radius: 4px;
-                                            background: rgba(255, 255, 255, 0.5);
-                                            /* ⭐ nền mờ 50% */
-                                            padding: 14px 20px 14px;
-                                            display: flex;
-                                            flex-direction: column;
-                                            align-items: center;
-                                        }
-
-                                        /* 📝 TIÊU ĐỀ */
-                                        .wc-cal-title {
-                                            font-family: "Pinyon Script", cursive;
-                                            font-size: 25px;
-                                            text-align: center;
-                                            margin: 0 0 10px;
-                                        }
-
-                                        .wc-cal {
-                                            width: 100%;
-                                        }
-
-                                        /* FRAME */
-                                        .wc-cal-frame {
-                                            width: 100%;
-                                            position: relative;
-                                            padding-top: 6px;
-                                        }
-
-                                        /* 1️⃣ Gạch trên hàng thứ */
-                                        .wc-cal-frame::before {
-                                            content: "";
-                                            position: absolute;
-                                            left: 0;
-                                            right: 0;
-                                            top: 0;
-                                            height: 0.5px;
-                                            background: #000;
-                                        }
-
-                                        /* HÀNG THỨ */
-                                        .wc-cal-dow-row {
-                                            margin-top: 6px;
-                                            display: grid;
-                                            grid-template-columns: repeat(7, 1fr);
-                                            padding-bottom: 6px;
-                                            position: relative;
-                                        }
-
-                                        .wc-cal-dow-row div {
-                                            text-align: center;
-                                            font-family: "Open Sans", sans-serif;
-                                            font-weight: 700;
-                                            font-size: 13px;
-                                        }
-
-                                        /* 2️⃣ Gạch dưới hàng thứ */
-                                        .wc-cal-dow-row::after {
-                                            content: "";
-                                            position: absolute;
-                                            left: 0;
-                                            right: 0;
-                                            bottom: 0;
-                                            height: 0.5px;
-                                            background: #000;
-                                        }
-
-                                        /* LƯỚI NGÀY */
-                                        .wc-cal-grid {
-                                            margin-top: 10px;
-                                            display: grid;
-                                            grid-template-columns: repeat(7, 1fr);
-                                            gap: 8px;
-                                            padding-bottom: 8px;
-                                            position: relative;
-                                        }
-
-                                        /* 3️⃣ Gạch cuối lịch */
-                                        .wc-cal-grid::after {
-                                            content: "";
-                                            position: absolute;
-                                            left: 0;
-                                            right: 0;
-                                            bottom: 0;
-                                            height: 1px;
-                                            background: #000;
-                                        }
-
-                                        /* Ô ngày */
-                                        .wc-cal-grid>div {
-                                            min-height: 28px;
-                                            display: flex;
-                                            align-items: center;
-                                            justify-content: center;
-                                            font-family: "Open Sans", sans-serif;
-                                            font-size: 13px;
-                                            position: relative;
-                                        }
-
-                                        .wc-cal-day-span {
-                                            z-index: 2;
-                                        }
-
-                                        .wc-cal-day--sun .wc-cal-day-span,
-                                        .wc-cal-day--selected .wc-cal-day-span {
-                                            font-weight: 700;
-                                        }
-
-                                        .wc-cal-empty {
-                                            opacity: 0;
-                                            /* ô trống không hiện */
-                                        }
-
-                                        /* TRÁI TIM */
-                                        .wc-cal-heart {
-                                            position: absolute;
-                                            width: 40px;
-                                            height: 40px;
-                                            top: 50%;
-                                            left: 50%;
-                                            transform: translate(-50%, -50%);
-                                            z-index: 1;
-                                            pointer-events: none;
-                                            animation: heartFlash 4s infinite ease-in-out;
-                                        }
-
-                                        @keyframes heartFlash {
-
-                                            0%,
-                                            100% {
-                                                opacity: 1;
-                                                transform: translate(-50%, -50%) scale(1);
-                                            }
-
-                                            50% {
-                                                opacity: 0.3;
-                                                transform: translate(-50%, -50%) scale(1.15);
-                                            }
-                                        }
-                                    </style>
-
-                                    <script>
-                                        (function () {
-                                            const HEART_SRC =
-                                                "https://content.pancake.vn/1/59/9d/0d/23/829a2a25903e5b03a029f62911ad0300b2c875df84e143b3258f9633-w:3600-h:3600-l:165926-t:image/png.png";
-
-                                            const titleEl = document.getElementById("wc-cal-title");
-                                            const cal = document.getElementById("wc-cal-target");
-                                            if (!cal || !titleEl) return;
-
-                                            const gridEl = cal.querySelector("[data-cal-grid]");
-                                            const dowEl = cal.querySelector("[data-cal-dow]");
-
-                                            const dowsVi = ["T2", "T3", "T4", "T5", "T6", "T7", "CN"];
-                                            const dowsEn = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
-
-                                            const monthFullEn = [
-                                                "January", "February", "March", "April", "May", "June",
-                                                "July", "August", "September", "October", "November", "December"
-                                            ];
-
-                                            function renderCalendar(days, month, year) {
-                                                if (!gridEl || !dowEl) return;
-
-                                                // ⭐ TIÊU ĐỀ
-                                                if (CAL_LANG === "en") {
-                                                    titleEl.textContent = monthFullEn[month - 1] + " - " + year;
-                                                } else {
-                                                    titleEl.textContent = "Tháng " + month + " - " + year;
-                                                }
-
-                                                // HÀNG THỨ
-                                                dowEl.innerHTML = "";
-                                                const dows = (CAL_LANG === "en") ? dowsEn : dowsVi;
-                                                dows.forEach(txt => {
-                                                    const d = document.createElement("div");
-                                                    d.textContent = txt;
-                                                    dowEl.appendChild(d);
-                                                });
-
-                                                gridEl.innerHTML = "";
-
-                                                const first = new Date(year, month - 1, 1);
-                                                const total = new Date(year, month, 0).getDate();
-
-                                                let offset, isSunday;
-                                                if (CAL_LANG === "en") {
-                                                    offset = first.getDay();    // Sunday = 0
-                                                    isSunday = col => col === 0;
-                                                } else {
-                                                    offset = (first.getDay() + 6) % 7; // Monday start
-                                                    isSunday = col => col === 6;
-                                                }
-
-                                                // Ô trống đầu
-                                                for (let i = 0; i < offset; i++) {
-                                                    const empty = document.createElement("div");
-                                                    empty.className = "wc-cal-day wc-cal-empty";
-                                                    gridEl.appendChild(empty);
-                                                }
-
-                                                // Ngày
-                                                for (let d = 1; d <= total; d++) {
-                                                    const cell = document.createElement("div");
-                                                    cell.className = "wc-cal-day";
-
-                                                    const index = offset + (d - 1);
-                                                    const col = index % 7;
-
-                                                    if (isSunday(col)) cell.classList.add("wc-cal-day--sun");
-
-                                                    const span = document.createElement("span");
-                                                    span.className = "wc-cal-day-span";
-                                                    span.textContent = d;
-                                                    cell.appendChild(span);
-
-                                                    if (days.includes(d)) {
-                                                        cell.classList.add("wc-cal-day--selected");
-                                                        const img = document.createElement("img");
-                                                        img.src = HEART_SRC;
-                                                        img.className = "wc-cal-heart";
-                                                        cell.appendChild(img);
-                                                    }
-
-                                                    gridEl.appendChild(cell);
-                                                }
-                                            }
-
-                                            function parseInput(str) {
-                                                const m = str.match(/^([\d,\s\-&]+)[\/\.\-](\d{1,2})[\/\.\-](\d{4})$/);
-                                                if (!m) return;
-
-                                                let days = [];
-                                                const parts = m[1].replace(/&/g, ",").split(",");
-                                                parts.forEach(p => {
-                                                    if (p.includes("-")) {
-                                                        const [start, end] = p.split("-").map(x => parseInt(x.trim(), 10));
-                                                        if (!isNaN(start) && !isNaN(end)) {
-                                                            for (let i = start; i <= end; i++) days.push(i);
-                                                        }
-                                                    } else {
-                                                        const num = parseInt(p.trim(), 10);
-                                                        if (!isNaN(num)) days.push(num);
-                                                    }
-                                                });
-                                                const month = parseInt(m[2], 10);
-                                                const year = parseInt(m[3], 10);
-
-                                                renderCalendar(days, month, year);
-                                            }
-
-                                            parseInput(DATE_INPUT);
-                                        })();
-                                    </script>
-                                </div>
+                    <div class="wedding-countdown-section">
+                        <h3 class="countdown-title">CÙNG ĐẾM NGƯỢC THỜI GIAN</h3>
+                        <div class="countdown-boxes">
+                            <div class="countdown-box">
+                                <span class="countdown-num" id="cd-days">00</span>
+                                <span class="countdown-label">NGÀY</span>
                             </div>
-                            <div id="w-2eza8nhq" class="com-rectangle p-absolute">
-                                <div class="rectangle-css full-mask-size mask-position full-height full-width lazy">
-                                    <div class="rectangle-gradient-border"></div>
-                                </div>
+                            <div class="countdown-box">
+                                <span class="countdown-num" id="cd-hours">00</span>
+                                <span class="countdown-label">GIỜ</span>
+                            </div>
+                            <div class="countdown-box">
+                                <span class="countdown-num" id="cd-minutes">00</span>
+                                <span class="countdown-label">PHÚT</span>
+                            </div>
+                            <div class="countdown-box">
+                                <span class="countdown-num" id="cd-seconds">00</span>
+                                <span class="countdown-label">GIÂY</span>
                             </div>
                         </div>
                     </div>
+                    <script>
+                        (function() {
+                            // Cấu hình ngày giờ đếm ngược (Mặc định: 10:00 ngày 18/12/2026)
+                            const targetDate = new Date("2026-12-18T10:00:00+07:00").getTime();
+
+                            function updateCountdown() {
+                                const now = new Date().getTime();
+                                const distance = targetDate - now;
+
+                                const daysEl = document.getElementById("cd-days");
+                                const hoursEl = document.getElementById("cd-hours");
+                                const minsEl = document.getElementById("cd-minutes");
+                                const secsEl = document.getElementById("cd-seconds");
+
+                                if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+
+                                if (distance <= 0) {
+                                    daysEl.textContent = "00";
+                                    hoursEl.textContent = "00";
+                                    minsEl.textContent = "00";
+                                    secsEl.textContent = "00";
+                                    return;
+                                }
+
+                                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                                daysEl.textContent = days < 10 ? "0" + days : String(days);
+                                hoursEl.textContent = hours < 10 ? "0" + hours : String(hours);
+                                minsEl.textContent = minutes < 10 ? "0" + minutes : String(minutes);
+                                secsEl.textContent = seconds < 10 ? "0" + seconds : String(seconds);
+                            }
+
+                            updateCountdown();
+                            setInterval(updateCountdown, 1000);
+                        })();
+                    </script>
                 </div>
             </div>
         </div>
